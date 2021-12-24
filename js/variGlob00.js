@@ -6,7 +6,7 @@ let tbUsuariosAjax =[];
 let idUs=0;              //Maneja los id de la BD usuario
 
 
-let usoLocalStorage=0  //=0 no utiliza localStorage, trabaja con APIres
+let usoLocalStorage=1  //=0 no utiliza localStorage, trabaja con APIres
 
                        //=1 utiliza localStorage, método utilizado
                        // al inicio del curso para el desarrollo de
