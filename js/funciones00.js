@@ -159,7 +159,9 @@ const listarUsOrdEdad = (tbUs,text) => {
 
 };
 
-
+//Recargar página
+//----------------
+let refrescar=()=>{location.reload};
 
 
 

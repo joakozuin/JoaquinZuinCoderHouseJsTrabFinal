@@ -365,9 +365,9 @@ $agrForm.addEventListener('submit', (e) => {
         metodo: "POST",
         respuesta: (res) => {
 
-            alertaAgregar("BD APIrest:Se Agregó el usuario con éxito BD",true);
+            alertaAgregar("BD APIrest: Se Agregó el usuario con éxito BD",true);
             $modalAgrForm.hide();
-            listarUsuariosDomAjax("BD APIrest:Listado de Usuarios.");
+            listarUsuariosDomAjax("BD APIrest: Listado de Usuarios.");
             //location.reload();
         },
         error: (err) => {

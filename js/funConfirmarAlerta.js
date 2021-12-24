@@ -27,7 +27,7 @@ let confirmarModif = function (titulo, dato, callback) {
     console.log(` no se pudo hacer ${titulo}`)
     //$("#confirModal").modal('hide');
     $modalConfirFormMod.hide();
-    alerta("No se pudo ejecutar la operación", false);
+    alertaModificar("No se Modificó", false);
 
 
   });
@@ -60,7 +60,7 @@ let confirmarBorrar = function (titulo, dato, callback1) {
     console.log(` no se pudo hacer ${titulo}`)
     //$("#confirModal").modal('hide');
     $modalConfirFormBorrar.hide();
-    alerta("No se pudo ejecutar la operación", false);
+    alertaBorrar("No se Borró", false);
 
 
   });
@@ -79,13 +79,13 @@ let alertaCargar = function (mensaje, confirm) {
     $('.cargarFondAlertTit').addClass("bg-success");
     $('.cargarAlertTit').text(mensaje);
     $cargarModalAlertForm.show();
-
+    refrescar();
   } else {
 
     $('.cargarFondAlertTit').addClass("bg-danger");
     $('.cargarAlertTit').text(mensaje);
     $cargarModalAlertForm.show();
-
+    refrescar();
   }
 };
 
@@ -100,13 +100,13 @@ let alertaBorrar = function (mensaje, confirm) {
     $('.borrarFondAlertTit').addClass("bg-success");
     $('.borrarAlertTit').text(mensaje);
     $borrarModalAlertForm.show();
-
+    refrescar();
   } else {
 
     $('.borrarFondAlertTit').addClass("bg-danger");
     $('.borrarAlertTit').text(mensaje);
     $borrarModalAlertForm.show();
-
+    refrescar();
   }
 };
 
@@ -121,13 +121,13 @@ let alertaModificar = function (mensaje, confirm) {
     $('.modificarFondAlertTit').addClass("bg-success");
     $('.modificarAlertTit').text(mensaje);
     $modificarModalAlertForm.show();
-
+    refrescar();
   } else {
 
     $('.modificarFondAlertTit').addClass("bg-danger");
     $('.modificarAlertTit').text(mensaje);
     $modificarModalAlertForm.show();
-
+    refrescar();
   }
 };
 
@@ -142,12 +142,12 @@ let alertaAgregar = function (mensaje, confirm) {
     $('.agregarFondAlertTit').addClass("bg-success");
     $('.agregarAlertTit').text(mensaje);
     $agregarModalAlertForm.show();
-
+    refrescar();
   } else {
 
     $('.agregarFondAlertTit').addClass("bg-danger");
     $('.agregarAlertTit').text(mensaje);
     $agregarModalAlertForm.show();
-
+    refrescar();
   }
 };
