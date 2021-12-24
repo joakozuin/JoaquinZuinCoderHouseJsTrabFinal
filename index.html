@@ -217,12 +217,12 @@
 
 <!-- Modal -->
 
-<!-- Modal dialogo Confirmar -->
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="confirModal">
+<!-- Modal dialogo Confirmar Modificar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="confirModalMod">
   <div class="modal-dialog modal-dialog-centered ">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white ">
-        <h4 class="confirTit  modal-title " id="staticBackdropLabel"></h4>
+        <h4 class="modConfirTit  modal-title " id="staticBackdropLabel"></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-footer">
@@ -234,12 +234,29 @@
 </div>
 <!-- Modal -->
 
-<!-- Modal dialogo Alerta -->
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="alertModal">
+<!-- Modal dialogo Confirmar Borrar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="confirModalBorr">
   <div class="modal-dialog modal-dialog-centered ">
     <div class="modal-content">
-      <div class="fondAlertTit modal-header  text-white ">
-        <h4 class="alertTit modal-title" id=""></h4>
+      <div class="modal-header bg-primary text-white ">
+        <h4 class="borrarConfirTit  modal-title " id="staticBackdropLabel"></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="borrarConfBtn-si">Si</button>
+        <button type="button" class="btn btn-danger" id="borrarConfBtn-no">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal dialogo Alerta Cargar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="cargarAlertModal">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="cargarFondAlertTit modal-header  text-white ">
+        <h4 class="cargarAlertTit modal-title" id=""></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
     </div>
@@ -247,6 +264,44 @@
 </div>
 <!-- Modal -->
 
+<!-- Modal dialogo Alerta Borrar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="borrarAlertModal">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="borrarFondAlertTit modal-header  text-white ">
+        <h4 class="borrarAlertTit modal-title" id=""></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal dialogo Alerta Modificar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modificarAlertModal">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modificarFondAlertTit modal-header  text-white ">
+        <h4 class="modificarAlertTit modal-title" id=""></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal dialogo Alerta Agregar-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="agregarAlertModal">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="agregarFondAlertTit modal-header  text-white ">
+        <h4 class="agregarAlertTit modal-title" id=""></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
     <script src="./js/bootstrap.bundle.min.js">  </script>
     <script src="./js/clases00.js">  </script>
     <script src="./js/variGlob00.js">  </script>

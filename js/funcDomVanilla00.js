@@ -167,7 +167,7 @@ function listarUsuariosDomAjax(texto) {
         error: (err) => {
             console.log(err);
             //$tabla.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`);
-            alerta(`${err}, No se cargaron los usuarios`,false);
+            alertaCargar(`${err}, No se cargaron los usuarios`,false);
         },
 
         datos: null
@@ -193,7 +193,7 @@ $d.addEventListener("click", e => {
 
        let titulo=`¿Está seguro de Editar el Usuario id= ${e.target.dataset.id} ?`;
 
-       confirmar(titulo,$idForm,regEditar);
+       confirmarModif(titulo,$idForm,regEditar);
 
     }
 
@@ -207,13 +207,13 @@ $d.addEventListener("click", e => {
 
         if(usoLocalStorage===0){
     
-         confirmar(titulo,id,regBorrar);
+         confirmarBorrar(titulo,id,regBorrar);
 
         }
 
         if(usoLocalStorage===1){
     
-            confirmar(titulo,id1,regBorrar);
+            confirmarBorrar(titulo,id1,regBorrar);
    
            }
 
@@ -241,14 +241,14 @@ let regBorrar=(id)=>{
         if (tbUsuariosAjax.length > 0) {
             //Lista los usuarios utilizando el Dom
             //************************************ 
-            alerta("Local Storage:El usuario fue eliminado con éxito", true);
+            alertaBorrar("Local Storage: El usuario fue eliminado con éxito", true);
 
             listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.");
             location.reload();
 
         }else{
 
-            alerta("Local Storage:Esta vacio cargue nuevos usuarios", false);
+            alertaBorrar("Local Storage: Esta vacio cargue nuevos usuarios", false);
 
             listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.");
           
@@ -264,14 +264,14 @@ let regBorrar=(id)=>{
                 metodo: "DELETE",
                 respuesta: (res) =>{
 
-                    alerta("BD APIrest: Se Borró el usuario con éxito",true);
+                    alertaBorrar("BD APIrest: Se Borró el usuario con éxito",true);
                     listarUsuariosDomAjax("BD APIrest:Listado de Usuarios.");
                     //location.reload();
 
                 },
                 error: (err) =>{
 
-                    alerta(`${err},BD APIrest No se Borró el usuario`,false);
+                    alertaBorrar(`${err},BD APIrest No se Borró el usuario`,false);
                 },
                 datos: {
                     nombre:null,
@@ -365,7 +365,7 @@ $agrForm.addEventListener('submit', (e) => {
         metodo: "POST",
         respuesta: (res) => {
 
-            alerta("BD APIrest:Se Agregó el usuario con éxito BD",true);
+            alertaAgregar("BD APIrest:Se Agregó el usuario con éxito BD",true);
             $modalAgrForm.hide();
             listarUsuariosDomAjax("BD APIrest:Listado de Usuarios.");
             //location.reload();
@@ -373,7 +373,7 @@ $agrForm.addEventListener('submit', (e) => {
         error: (err) => {
 
             //$tabla.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`);
-            alerta(`${err}, No se Agregó el usuario a la BD`,false);
+            alertaAgregar(`${err}, No se Agregó el usuario a la BD`,false);
             $modalAgrForm.hide();
 
         },
@@ -410,7 +410,7 @@ $agrForm.addEventListener('submit', (e) => {
         listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.")
 
 
-        alerta("LocalStorage:Se Agregó el usuario con éxito.", true);
+        alertaAgregar("LocalStorage: Se Agregó el usuario con éxito.", true);
 
         $modalAgrForm.hide();
 
@@ -446,15 +446,15 @@ $agrForm.addEventListener('submit', (e) => {
                metodo: "PUT",
                respuesta: (res) => {
 
-                   alerta("BD APIrest:Se Editó el usuario con éxito", true);
+                   alertaModificar("BD APIrest: Se Editó el usuario con éxito", true);
                    $modalModForm.hide();
-                   listarUsuariosDomAjax("BD APIrest:Listado de Usuarios.");
+                   listarUsuariosDomAjax("BD APIrest: Listado de Usuarios.");
                    //location.reload();
                },
                error: (err) => {
 
                    //$tabla.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`);
-                   alerta(`${err}, No se Editó el usuario`, false);
+                   alertaModificar(`${err}, No se Editó el usuario`, false);
                    $modalModForm.hide();
 
                },
@@ -506,7 +506,7 @@ $agrForm.addEventListener('submit', (e) => {
            listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.")
 
 
-           alerta("LocalStorage:Se ha modificado el Usuario con éxito", true);
+           alertaModificar("LocalStorage: Se ha modificado el Usuario con éxito", true);
 
            $modalModForm.hide();
        }
@@ -517,62 +517,57 @@ $agrForm.addEventListener('submit', (e) => {
 
 
 
+ //Funciones Listar usuarios
+ //-------------------------
+ $listUs.onclick = () => {
 
-$listUs.onclick = () => {
+     if (usoLocalStorage === 0) {
+         texto = "BD APIrest:Listado de Usuarios.";
+         listarUsuariosDomAjax(texto);
+     }
 
+     if (usoLocalStorage === 1) {
+         texto = "LocalStorage:Listado de Usuarios.";
+         cargarUsuarios();
+         listarUsuariosDom(tbUsuariosAjax, texto);
+     }
 
-    if (usoLocalStorage === 0) {
-        texto = "BD APIrest:Listado de Usuarios.";
-
-        listarUsuariosDomAjax(texto);
-    }
-
-    if (usoLocalStorage === 1) {
-
-        texto = "LocalStorage:Listado de Usuarios.";
-        cargarUsuarios();
-        listarUsuariosDom(tbUsuariosAjax,texto);
-    }
-        
-
-    listarUsuarios(tbUsuariosAjax, texto);
+     listarUsuarios(tbUsuariosAjax, texto);
 
 
-}
+ }
 
-$listUsNom.onclick=()=>{
+ $listUsNom.onclick = () => {
 
-    let texto="";
+     let texto = "";
 
-    if (usoLocalStorage === 0) {
-        texto = "BD APIrest:Lista usuarios por Nombre.";
-    }
+     if (usoLocalStorage === 0) {
+         texto = "BD APIrest:Lista usuarios por Nombre.";
+     }
 
-    if (usoLocalStorage === 1) {
-        texto = "LocalStorage:Lista usuarios por Nombre.";
-    }
+     if (usoLocalStorage === 1) {
+         texto = "LocalStorage:Lista usuarios por Nombre.";
+     }
 
-    
-    listarUsOrdNombre(tbUsuariosAjax,texto);
-    
-}
+     listarUsOrdNombre(tbUsuariosAjax, texto);
 
-$listUsEdad.onclick=()=>{
+ }
 
-    let texto="";
+ $listUsEdad.onclick = () => {
 
-    if (usoLocalStorage === 0) {
-        texto = "BD APIrest:Lista usuarios por Edad.";
-    }
+     let texto = "";
 
-    if (usoLocalStorage === 1) {
-        texto = "LocalStorage:Lista usuarios por Edad.";
-    }
+     if (usoLocalStorage === 0) {
+         texto = "BD APIrest:Lista usuarios por Edad.";
+     }
 
-   
-    listarUsOrdEdad(tbUsuariosAjax,texto);
-    
-}
+     if (usoLocalStorage === 1) {
+         texto = "LocalStorage:Lista usuarios por Edad.";
+     }
 
-//Fin lista Usuarios Dom
-//-----------------------------------------------------
+     listarUsOrdEdad(tbUsuariosAjax, texto);
+
+ }
+
+ //Fin lista Usuarios Dom
+ //-----------------------------------------------------
