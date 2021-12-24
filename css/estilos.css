@@ -1,0 +1,61 @@
+body {
+	width: 1200px;
+	max-width: 90%;
+	margin: 0 auto;
+	background-color:white;
+}
+table thead{
+	background-color: #0a4f70;
+	color: white;
+}
+h1 {
+	text-align: left;
+}
+h2 {
+	text-align: center;
+}
+h3 {
+	text-align: left;
+}
+.container {
+	width: 90%;
+	max-width: 1200px;
+}
+
+.completed {
+	color: green;
+	font-weight: 700;
+}
+
+.pending {
+	color: tomato;
+}
+a:hover{
+	background-color: rgb(225, 222, 222);
+    font-weight: 500;
+}
+.navbar-brand{
+	background-color:yellow;
+	padding: 0.5rem;
+}
+.divTit{
+	position: relative;
+	background-color: rgba(239, 239, 245, 0.776);
+	padding: 5px;
+
+}
+
+.imgCuerpo {
+	background-image: url(../img/img00.jpeg);
+	background-size: 100% auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+   }
+
+.table-wrapper {
+	background: rgb(242, 239, 239);
+	padding: 10px 15px;
+	border-radius: 3px;
+	min-width: 100%;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
