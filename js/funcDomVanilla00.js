@@ -264,13 +264,13 @@ let regBorrar=(id)=>{
                 respuesta: (res) =>{
 
                     alertaBorrar("BD APIrest: Se Borró el usuario con éxito",true);
-                    listarUsuariosDomAjax("BD APIrest:Listado de Usuarios.");
+                    listarUsuariosDomAjax("BD APIrest: Listado de Usuarios.");
                     //location.reload();
 
                 },
                 error: (err) =>{
 
-                    alertaBorrar(`${err},BD APIrest No se Borró el usuario`,false);
+                    alertaBorrar(`${err},BD APIrest: Algún problema al Borrar un usuario o BD sin Datos`,false);
                 },
                 datos: {
                     nombre:null,

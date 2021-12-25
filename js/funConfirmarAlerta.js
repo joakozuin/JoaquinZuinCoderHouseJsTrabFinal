@@ -128,7 +128,7 @@ let alertaBorrar = function (mensaje, confirm) {
 
     console.log(`Se cerro el Alerta Borrar`)
     $borrarModalAlertForm.hide();
-    //refrescar();
+    refrescar();
 
   });
  
