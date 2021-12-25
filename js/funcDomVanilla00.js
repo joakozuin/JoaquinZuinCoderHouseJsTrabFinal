@@ -244,14 +244,13 @@ let regBorrar=(id)=>{
             alertaBorrar("Local Storage: El usuario fue eliminado con éxito", true);
 
             listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.");
-            location.reload();
+            //location.reload();
 
         }else{
 
             alertaBorrar("Local Storage: Esta vacio cargue nuevos usuarios", false);
 
             listarUsuariosDom(tbUsuariosAjax, "LocalStorage:Listado de Usuario.");
-          
             //location.reload();  
         };
     }

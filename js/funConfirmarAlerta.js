@@ -68,26 +68,40 @@ let confirmarBorrar = function (titulo, dato, callback1) {
 
 };
 
+
+
 let alertaCargar = function (mensaje, confirm) {
 
   const $cargarModalAlertForm = new bootstrap.Modal($d.querySelector("#cargarAlertModal"));
 
   console.log(`tipo de alerta: ${confirm}`);
 
-  if (confirm) {
+  
 
+  if (confirm) {
+    $('.cargarFondAlertTit').removeClass('bg-danger');
     $('.cargarFondAlertTit').addClass("bg-success");
     $('.cargarAlertTit').text(mensaje);
     $cargarModalAlertForm.show();
-    refrescar();
+    
   } else {
-
+    $('.cargarFondAlertTit').removeClass('bg-success');
     $('.cargarFondAlertTit').addClass("bg-danger");
     $('.cargarAlertTit').text(mensaje);
     $cargarModalAlertForm.show();
+    
+  };
+
+  $("#btnCargarAlertaCerrar").on("click", function () {
+
+    console.log(`Se cerro el Alerta Cargar`)
+    $cargarModalAlertForm.hide();
     refrescar();
-  }
+
+  });
+
 };
+
 
 let alertaBorrar = function (mensaje, confirm) {
 
@@ -95,20 +109,32 @@ let alertaBorrar = function (mensaje, confirm) {
 
   console.log(`tipo de alerta: ${confirm}`);
 
-  if (confirm) {
 
+  if (confirm) {
+    $('.borrarFondAlertTit').removeClass('bg-danger');
     $('.borrarFondAlertTit').addClass("bg-success");
     $('.borrarAlertTit').text(mensaje);
     $borrarModalAlertForm.show();
-    refrescar();
-  } else {
 
-    $('.borrarFondAlertTit').addClass("bg-danger");
+  } else {
+    $('.borrarFondAlertTit').removeClass("bg-success");
+    $('.borrarFondAlertTit').addClass('bg-danger');
     $('.borrarAlertTit').text(mensaje);
     $borrarModalAlertForm.show();
-    refrescar();
-  }
+
+  };
+
+  $("#btnCargarAlertaBorrar").on("click", function () {
+
+    console.log(`Se cerro el Alerta Borrar`)
+    $borrarModalAlertForm.hide();
+    //refrescar();
+
+  });
+ 
 };
+
+
 
 let alertaModificar = function (mensaje, confirm) {
 
@@ -117,19 +143,32 @@ let alertaModificar = function (mensaje, confirm) {
   console.log(`tipo de alerta: ${confirm}`);
 
   if (confirm) {
-
-    $('.modificarFondAlertTit').addClass("bg-success");
+    console.log(`Alerta Modificar Verdad`)
+    $('.modificarFondAlertTit').removeClass('bg-danger');
+    $('.modificarFondAlertTit').addClass('bg-success');
     $('.modificarAlertTit').text(mensaje);
     $modificarModalAlertForm.show();
-    refrescar();
+    
   } else {
-
-    $('.modificarFondAlertTit').addClass("bg-danger");
+    console.log(`Alerta Modificar Falso`)
+    $('.modificarFondAlertTit').removeClass('bg-success');
+    $('.modificarFondAlertTit').addClass('bg-danger');
     $('.modificarAlertTit').text(mensaje);
     $modificarModalAlertForm.show();
-    refrescar();
+    
   }
+
+  $("#btnCargarAlertaModificar").on("click", function () {
+
+    console.log(`Se cerro el Alerta Modificar`)
+    $modificarModalAlertForm.hide();
+    refrescar();
+
+  });
+
 };
+
+
 
 let alertaAgregar = function (mensaje, confirm) {
 
@@ -137,17 +176,27 @@ let alertaAgregar = function (mensaje, confirm) {
 
   console.log(`tipo de alerta: ${confirm}`);
 
-  if (confirm) {
 
+  if (confirm) {
+    $('.agregarFondAlertTit').removeClass('bg-danger');
     $('.agregarFondAlertTit').addClass("bg-success");
     $('.agregarAlertTit').text(mensaje);
     $agregarModalAlertForm.show();
-    refrescar();
+    
   } else {
-
+    $('.agregarFondAlertTit').removeClass('bg-success');
     $('.agregarFondAlertTit').addClass("bg-danger");
     $('.agregarAlertTit').text(mensaje);
     $agregarModalAlertForm.show();
-    refrescar();
+    
   }
+
+  $("#btnCargarAlertaAgregar").on("click", function () {
+
+    console.log(`Se cerro el Alerta Agregar`)
+    $agregarModalAlertForm.hide();
+    refrescar();
+
+  });
+
 };
